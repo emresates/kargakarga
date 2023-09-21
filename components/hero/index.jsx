@@ -49,11 +49,11 @@ const Hero = () => {
               </button>
             </div>
             <div className="right">
-              <div className="relative z-[1] mt-60 aspect-video w-[800px]">
+              <div className="relative mt-60 aspect-video w-[800px]">
                 <Image src={slide.img} fill alt={slide.title} />
               </div>
             </div>
-            <div className="absolute right-10 top-52">
+            <div className="absolute right-10 top-52 -z-10">
               <div className="relative aspect-square w-[600px]">
                 <Image src="/ellipse.png" fill alt="ellipse" />
               </div>

@@ -19,7 +19,7 @@ const HomeContainer = () => {
       <Team />
       <CustomersFeedback />
       <MidSection />
-      {/* <Faq /> */}
+      <Faq />
       {/* <Footer /> */}
     </div>
   );

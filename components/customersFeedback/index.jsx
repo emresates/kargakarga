@@ -17,17 +17,16 @@ const CustomersFeedback = () => {
       clearInterval(interval);
     };
   }, []);
-  console.log(activeIndex);
 
   return (
     <div className="relative mt-20 h-[500px] pt-20">
-      <div className="absolute -left-20 -top-10">
+      <div className="absolute -left-20 -top-10 -z-10">
         <div className="relative aspect-square w-[350px]">
           <Image src="/ellipse.png" fill alt="ellipse" />
         </div>
       </div>
       <div className="flex flex-col">
-        <h1 className="z-10 ml-20 text-4xl font-extrabold mb-10 uppercase">
+        <h1 className="ml-20 text-4xl font-extrabold mb-10 uppercase">
           Customer Feedback
         </h1>
 

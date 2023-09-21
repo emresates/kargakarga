@@ -6,13 +6,13 @@ import PersonCard from "../personCard";
 const Team = () => {
   return (
     <div className="relative h-[800px] mb-10">
-      <div className="absolute -left-20 -top-10">
+      <div className="absolute -left-20 -top-10 -z-10">
         <div className="relative aspect-square w-[350px]">
           <Image src="/ellipse.png" fill alt="ellipse" />
         </div>
       </div>
       <div className="flex items-center justify-between px-10 pt-20">
-        <h1 className="z-10 flex-[2] text-5xl font-extrabold uppercase">
+        <h1 className="flex-[2] text-5xl font-extrabold uppercase">
           MANCO ART — Ukrainian Game Art Outsourcing Studio
         </h1>
         <p className="flex-1 text-xl">

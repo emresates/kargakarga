@@ -6,7 +6,7 @@ import { servicesFirst, servicesSecond } from "@/data/services";
 const OurServices = () => {
   return (
     <div className="relative h-[1000px] w-screen">
-      <div className="absolute -right-32 top-0 z-0">
+      <div className="absolute -right-32 top-0 -z-10">
         <div className="relative aspect-square w-[400px]">
           <Image src="/ellipse.png" fill alt="ellipse" />
         </div>
