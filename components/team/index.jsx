@@ -6,7 +6,7 @@ import PersonCard from "../personCard";
 const Team = () => {
   return (
     <div className="relative h-[800px] mb-10">
-      <div className="absolute -left-32 -top-10">
+      <div className="absolute -left-20 -top-10">
         <div className="relative aspect-square w-[350px]">
           <Image src="/ellipse.png" fill alt="ellipse" />
         </div>

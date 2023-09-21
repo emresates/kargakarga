@@ -1,9 +1,67 @@
-import React from 'react'
+"use client";
+import { feedbacks } from "@/data/feedbacks";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 const CustomersFeedback = () => {
-  return (
-    <div>CustomersFeedback</div>
-  )
-}
+  const [activeIndex, setActiveIndex] = useState(0);
 
-export default CustomersFeedback
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === feedbacks.length - 2 ? 0 : prevIndex + 1,
+      );
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+  console.log(activeIndex);
+
+  return (
+    <div className="relative mt-20 h-[500px] pt-20">
+      <div className="absolute -left-20 -top-10">
+        <div className="relative aspect-square w-[350px]">
+          <Image src="/ellipse.png" fill alt="ellipse" />
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <h1 className="z-10 ml-20 text-4xl font-extrabold mb-10 uppercase">
+          Customer Feedback
+        </h1>
+
+        <div className="relative mx-auto w-11/12 overflow-hidden rounded-2xl bg-white">
+          <div
+            className={`z-10 flex h-full flex-row transition-transform`}
+            style={{ transform: `translateX(-${activeIndex * 700}px)` }}
+          >
+            {feedbacks.map((feedback) => (
+              <div
+                key={feedback.id}
+                className="mx-auto min-w-[700px] px-4 py-8"
+              >
+                <div className="rounded p-4">
+                  <div className="flex">
+                    <div className="relative aspect-square w-16">
+                      <Image src={feedback.img} fill sizes="50px" />
+                    </div>
+                    <div className="ml-6">
+                      <h2 className="text-2xl font-bold capitalize">{feedback.name}</h2>
+                      <span className="text-sm text-gray-500">
+                        {feedback.date}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-gray-800 mt-4">{feedback.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CustomersFeedback;
