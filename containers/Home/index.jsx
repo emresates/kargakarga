@@ -7,6 +7,7 @@ import Hero from "@/components/hero";
 import OurServices from "@/components/ourservices";
 import CookiePolicy from "@/components/cookies";
 import Team from "@/components/team";
+import MidSection from "@/components/midSection";
 
 const HomeContainer = () => {
   return (
@@ -17,6 +18,7 @@ const HomeContainer = () => {
       <OurServices />
       <Team />
       <CustomersFeedback />
+      <MidSection />
       {/* <Faq /> */}
       {/* <Footer /> */}
     </div>
