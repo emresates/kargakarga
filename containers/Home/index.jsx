@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import OurServices from "@/components/ourservices";
 import CookiePolicy from "@/components/cookies";
+import Team from "@/components/team";
 
 const HomeContainer = () => {
   return (
@@ -14,6 +15,7 @@ const HomeContainer = () => {
       <Header />
       <Hero />
       <OurServices />
+      <Team />
       {/* <CustomersFeedback /> */}
       {/* <Faq /> */}
       {/* <Footer /> */}
