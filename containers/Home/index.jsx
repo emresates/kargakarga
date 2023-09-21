@@ -9,6 +9,10 @@ import CookiePolicy from "@/components/cookies";
 import Team from "@/components/team";
 import MidSection from "@/components/midSection";
 
+// NOTES: Form döndüsü eklenecek
+// Mobil uyumlu olacak
+// Key problemleri çözülecek
+
 const HomeContainer = () => {
   return (
     <div className="overflow-hidden">
