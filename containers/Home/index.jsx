@@ -9,11 +9,11 @@ import CookiePolicy from "@/components/cookies";
 
 const HomeContainer = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <CookiePolicy />
       <Header />
       <Hero />
-      {/* <OurServices /> */}
+      <OurServices />
       {/* <CustomersFeedback /> */}
       {/* <Faq /> */}
       {/* <Footer /> */}
