@@ -1,9 +1,98 @@
-import React from 'react'
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import Modal from "../modal";
 
 const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
+  const [isOpen, setIsOpen] = useState(false);
+  const [state, setState] = useState(false);
 
-export default Footer
+  const handleClick = () => {
+    if (!state) {
+      setIsOpen(true);
+    } else setState(false);
+  };
+
+  return (
+    <footer className="flex h-screen w-full flex-col text-white">
+      <div className="flex h-[850px] items-center justify-between bg-blue-600">
+        <div className="pl-20 pr-60">
+          <h1 className="mb-10 text-5xl font-extrabold uppercase">
+            Let's start your project!
+          </h1>
+          <p className="mb-10 text-2xl">
+            Leave your contact details and we will contact you
+          </p>
+          <form method="dialog" className="flex flex-col gap-y-10">
+            <input
+              className="w-[600px] border-b-2 bg-transparent pb-4 outline-none"
+              type="text"
+              placeholder="How can I contact you?"
+            />
+            <input
+              className="w-[600px] border-b-2 bg-transparent pb-4 outline-none"
+              type="text"
+              placeholder="Phone/email"
+            />
+            <input
+              className="w-[600px] border-b-2 bg-transparent pb-4 outline-none"
+              type="text"
+              placeholder="Add a message"
+            />
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                id="checkbox"
+                onChange={() => handleClick()}
+                checked={state}
+                className="h-8 w-8 border-2 accent-black outline-none"
+              />
+              <label htmlFor="checkbox" className="select-none">
+                I agree to the processing of personal data.
+              </label>
+              <Modal
+                isOpen={isOpen}
+                setState={setState}
+                setIsOpen={setIsOpen}
+              />
+            </div>
+            <button className="w-64 rounded-2xl bg-white px-6 py-6 text-2xl font-bold text-blue-700">
+              Send
+            </button>
+          </form>
+        </div>
+        <div className="relative h-[650px] w-[850px]">
+          <Image src="/group.png" fill alt="group" sizes="500px" />
+        </div>
+      </div>
+
+      <div className="flex h-60 flex-col items-center justify-center bg-blue-950">
+        <div className="flex w-full items-center justify-center gap-x-4">
+          <div className="relative h-14 w-14">
+            <Link href="https://www.instagram.com/secenory" target="_blank">
+              <Image src="/insta.svg" fill alt="insta" />
+            </Link>
+          </div>
+
+          <div className="relative h-14 w-14">
+            <Link href="https://www.linkedin.com/in/emresates/" target="_blank">
+              <Image src="/linkedin.svg" fill alt="insta" />
+            </Link>
+          </div>
+
+          <div className="relative h-14 w-14">
+            <Link href="/" target="_blank">
+              <Image src="/twitter.svg" fill alt="insta" />
+            </Link>
+          </div>
+        </div>
+        <span className="mt-8">
+          Üretken insanların tanışıp, proje üretebildiği açık inovasyon merkezi.
+        </span>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

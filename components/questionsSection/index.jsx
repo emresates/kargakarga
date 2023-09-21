@@ -14,12 +14,8 @@ const Question = ({ index, question, answer, openIndex, setOpenIndex }) => {
         className="flex cursor-pointer items-center justify-between rounded-lg p-8"
       >
         <h2 className="text-xl font-semibold">{question}</h2>
-        <span
-          className={`transform transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        >
-          ▼
+        <span className={`transform text-4xl transition-transform`}>
+          {isOpen ? "-" : "+"}
         </span>
       </div>
       {isOpen && (

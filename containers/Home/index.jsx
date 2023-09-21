@@ -20,7 +20,7 @@ const HomeContainer = () => {
       <CustomersFeedback />
       <MidSection />
       <Faq />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
