@@ -5,18 +5,41 @@ import React, { useEffect, useState } from "react";
 
 const CustomersFeedback = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndexMobile, setActiveIndexMobile] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) =>
-        prevIndex === feedbacks.length - 1 ? 0 : prevIndex + 1,
+        prevIndex === feedbacks.length - 2 ? 0 : prevIndex + 1,
       );
     }, 3000);
 
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
       clearInterval(interval);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (windowWidth < 768) {
+      const interval = setInterval(() => {
+        setActiveIndexMobile((prevIndex) =>
+          prevIndex === feedbacks.length - 1 ? 0 : prevIndex + 1,
+        );
+      }, 3000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [windowWidth]);
 
   return (
     <div className="relative mt-20 h-[500px] pt-20">
@@ -26,11 +49,11 @@ const CustomersFeedback = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <h1 className="ml-20 text-4xl font-extrabold mb-10 uppercase">
+        <h1 className="mb-10 ml-20 text-4xl font-extrabold uppercase">
           Customer Feedback
         </h1>
 
-        <div className="hidden md:block relative mx-auto w-11/12 overflow-hidden rounded-2xl bg-white">
+        <div className="relative mx-auto hidden w-11/12 overflow-hidden rounded-2xl bg-white md:block">
           <div
             className={`z-10 flex h-full flex-row transition-transform `}
             style={{ transform: `translateX(-${activeIndex * 700}px)` }}
@@ -38,7 +61,7 @@ const CustomersFeedback = () => {
             {feedbacks.map((feedback) => (
               <div
                 key={feedback.id}
-                className="mx-auto sm:min-w-[700px] px-4 py-8"
+                className="mx-auto px-4 py-8 sm:min-w-[700px]"
               >
                 <div className="rounded p-4">
                   <div className="flex">
@@ -46,42 +69,45 @@ const CustomersFeedback = () => {
                       <Image src={feedback.img} fill sizes="50px" />
                     </div>
                     <div className="ml-6">
-                      <h2 className="text-2xl font-bold capitalize">{feedback.name}</h2>
+                      <h2 className="text-2xl font-bold capitalize">
+                        {feedback.name}
+                      </h2>
                       <span className="text-sm text-gray-500">
                         {feedback.date}
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-800 mt-4">{feedback.description}</p>
+                  <p className="mt-4 text-gray-800">{feedback.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="block md:hidden relative mx-auto w-full overflow-hidden rounded-2xl bg-white">
+        <div className="relative mx-auto block w-full overflow-hidden rounded-2xl bg-white md:hidden">
           <div
             className={`z-10 flex h-full flex-row transition-transform `}
-            style={{ transform: `translateX(-${activeIndex * 100}vw)` }}
+            style={{ transform: `translateX(-${activeIndexMobile * 100}vw)` }}
           >
             {feedbacks.map((feedback) => (
-              <div
-                key={feedback.id}
-                className="min-w-[100vw] px-2 py-4"
-              >
+              <div key={feedback.id} className="min-w-[100vw] px-2 py-4">
                 <div className="rounded p-4">
                   <div className="flex">
                     <div className="relative aspect-square w-8 md:w-16">
                       <Image src={feedback.img} fill sizes="50px" />
                     </div>
                     <div className="ml-6">
-                      <h2 className="text-lg md:text-2xl font-bold capitalize">{feedback.name}</h2>
-                      <span className="text-xs md:text-sm text-gray-500">
+                      <h2 className="text-lg font-bold capitalize md:text-2xl">
+                        {feedback.name}
+                      </h2>
+                      <span className="text-xs text-gray-500 md:text-sm">
                         {feedback.date}
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-800 mt-4 text-sm md:text-base">{feedback.description}</p>
+                  <p className="mt-4 text-sm text-gray-800 md:text-base">
+                    {feedback.description}
+                  </p>
                 </div>
               </div>
             ))}
