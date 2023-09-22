@@ -5,9 +5,12 @@ import React from "react";
 
 const MobileCombustionContainer = () => {
   return (
-    <div className="flex h-screen w-screen overflow-hidden" style={{backgroundColor: "#ECECEC"}}>
+    <div
+      className="flex h-auto w-screen"
+      style={{ backgroundColor: "#ECECEC" }}
+    >
       <Navbar />
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <Header />
         <Inputs />
       </div>
