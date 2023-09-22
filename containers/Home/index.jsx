@@ -1,13 +1,12 @@
 import React from "react";
-import CustomersFeedback from "@/components/customersFeedback";
-import Faq from "@/components/faq";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import Hero from "@/components/hero";
-import OurServices from "@/components/ourservices";
-import CookiePolicy from "@/components/cookies";
-import Team from "@/components/team";
-import MidSection from "@/components/midSection";
+import CustomersFeedback from "@/components/landingpagecomponents/customersFeedback";
+import Faq from "@/components/landingpagecomponents/faq";
+import Footer from "@/components/landingpagecomponents/footer";
+import Hero from "@/components/landingpagecomponents/hero";
+import OurServices from "@/components/landingpagecomponents/ourservices";
+import CookiePolicy from "@/components/landingpagecomponents/cookies";
+import Team from "@/components/landingpagecomponents/team";
+import MidSection from "@/components/landingpagecomponents/midSection";
 
 // NOTES: Form döndüsü eklenecek
 
@@ -15,7 +14,6 @@ const HomeContainer = () => {
   return (
     <div className="overflow-hidden">
       <CookiePolicy />
-      <Header />
       <Hero />
       <OurServices />
       <Team />

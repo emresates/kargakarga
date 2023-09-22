@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MobileCombustion = () => {
+const MobileCombustionContainer = () => {
   return (
-    <div>MobileCombustion</div>
+    <div>MobileCombustionContainer</div>
   )
 }
 
-export default MobileCombustion
+export default MobileCombustionContainer
