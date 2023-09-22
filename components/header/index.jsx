@@ -4,8 +4,6 @@ import React, { useState } from "react";
 const Header = () => {
   const [open, setOpen] = useState(false);
 
-  console.log(open);
-
   return (
     <div className="absolute left-0 top-0 flex h-24 w-full items-center justify-between px-14">
       <div className="left">

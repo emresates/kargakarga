@@ -1,14 +1,15 @@
 import React from "react";
 
-const Question = ({ index, question, answer, openIndex, setOpenIndex }) => {
+const Question = ({index, question, answer, openIndex, setOpenIndex }) => {
   const isOpen = index === openIndex;
 
   const toggleFAQ = () => {
     setOpenIndex(isOpen ? -1 : index);
   };
 
+
   return (
-    <div className="mb-4">
+    <div className="mb-4" key={question}>
       <div
         onClick={toggleFAQ}
         className="flex cursor-pointer items-center justify-between rounded-lg p-8"

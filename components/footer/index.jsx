@@ -77,13 +77,13 @@ const Footer = () => {
 
           <div className="relative h-14 w-8 md:w-14">
             <Link href="https://www.linkedin.com/in/emresates/" target="_blank">
-              <Image src="/linkedin.svg" fill alt="insta" />
+              <Image src="/linkedin.svg" fill alt="linkedin" />
             </Link>
           </div>
 
           <div className="relative h-14 w-8 md:w-14">
             <Link href="/" target="_blank">
-              <Image src="/twitter.svg" fill alt="insta" />
+              <Image src="/twitter.svg" fill alt="twitter" />
             </Link>
           </div>
         </div>

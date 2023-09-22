@@ -34,7 +34,7 @@ const Hero = () => {
       <div className="center">
         {slides.map((slide, index) => (
           <div
-            key={slide.id}
+            key={index}
             className={`absolute left-0 top-0 flex h-full w-full items-center justify-between p-10 opacity-0 transition-opacity duration-1000 sm:p-20 xl:p-20 ${
               activeSlide === index && "opacity-100"
             }`}

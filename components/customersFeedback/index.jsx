@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 const CustomersFeedback = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeIndexMobile, setActiveIndexMobile] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,7 +66,12 @@ const CustomersFeedback = () => {
                 <div className="rounded p-4">
                   <div className="flex">
                     <div className="relative aspect-square w-16">
-                      <Image src={feedback.img} fill sizes="50px" />
+                      <Image
+                        src={feedback.img}
+                        alt={feedback.name}
+                        fill
+                        sizes="50px"
+                      />
                     </div>
                     <div className="ml-6">
                       <h2 className="text-2xl font-bold capitalize">
@@ -94,7 +99,12 @@ const CustomersFeedback = () => {
                 <div className="rounded p-4">
                   <div className="flex">
                     <div className="relative aspect-square w-8 md:w-16">
-                      <Image src={feedback.img} fill sizes="50px" />
+                      <Image
+                        src={feedback.img}
+                        alt={feedback.name}
+                        fill
+                        sizes="50px"
+                      />
                     </div>
                     <div className="ml-6">
                       <h2 className="text-lg font-bold capitalize md:text-2xl">

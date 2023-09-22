@@ -10,7 +10,6 @@ import Team from "@/components/team";
 import MidSection from "@/components/midSection";
 
 // NOTES: Form döndüsü eklenecek
-// Key problemleri çözülecek
 
 const HomeContainer = () => {
   return (

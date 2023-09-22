@@ -15,9 +15,10 @@ const OurServices = () => {
         Our Services
       </h1>
       <div className="mx-auto w-11/12">
-        <div className="flex gap-x-4 flex-wrap justify-around">
+        <div className="flex flex-wrap justify-around gap-x-4">
           {servicesFirst.map((service) => (
             <Card
+              key={service.title}
               title={service.title}
               description={service.description}
               image={service.img}
@@ -25,6 +26,7 @@ const OurServices = () => {
           ))}
           {servicesSecond.map((service) => (
             <Card
+              key={service.title}
               title={service.title}
               description={service.description}
               image={service.img}
