@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div
       className={`${
-        path === "/mobilecons" ? "hidden" : "block"
+        path === "/mobilecom" ? "hidden" : "block"
       } absolute left-0 top-0 z-50 flex h-24 w-full items-center justify-between px-14`}
     >
       <div className="left">
