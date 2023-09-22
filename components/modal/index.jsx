@@ -5,7 +5,7 @@ const Modal = ({ isOpen, setState, setIsOpen }) => {
     <div>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center text-black">
-          <div className="h-96 w-1/2 rounded-lg bg-white p-8 shadow-black shadow-xl overflow-y-scroll">
+          <div className="h-96 w-5/6 md:w-1/2 rounded-lg bg-white p-8 shadow-black shadow-xl overflow-y-scroll">
             <h2 className="mb-4 text-xl font-semibold">
               Personal Data Privacy Notice
             </h2>

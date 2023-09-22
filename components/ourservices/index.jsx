@@ -5,7 +5,7 @@ import { servicesFirst, servicesSecond } from "@/data/services";
 
 const OurServices = () => {
   return (
-    <div className="relative h-[1000px] w-screen">
+    <div className="relative h-full w-screen">
       <div className="absolute -right-32 top-0 -z-10">
         <div className="relative aspect-square w-[400px]">
           <Image src="/ellipse.png" fill alt="ellipse" />
@@ -15,7 +15,7 @@ const OurServices = () => {
         Our Services
       </h1>
       <div className="mx-auto w-11/12">
-        <div className="flex gap-x-4">
+        <div className="flex gap-x-4 flex-wrap justify-around">
           {servicesFirst.map((service) => (
             <Card
               title={service.title}
@@ -23,8 +23,6 @@ const OurServices = () => {
               image={service.img}
             />
           ))}
-        </div>
-        <div className="flex gap-x-4">
           {servicesSecond.map((service) => (
             <Card
               title={service.title}
@@ -33,6 +31,7 @@ const OurServices = () => {
             />
           ))}
         </div>
+        <div className="flex gap-x-4"></div>
       </div>
     </div>
   );

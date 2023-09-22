@@ -53,7 +53,7 @@ export default function CookiePolicy() {
   }
 
   return (
-    <div className="absolute bottom-0 left-0 z-50 flex h-24 w-full items-center justify-between bg-black px-20 py-10 text-white">
+    <div className="fixed bottom-0 left-0 z-50 flex h-24 w-full items-center justify-between bg-black px-20 py-10 text-white">
       <p className="flex-[2] text-base font-normal leading-6">
         privacy setting — This site uses third-party website traking
         technologies to provide and continially improve our services. I agree

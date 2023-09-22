@@ -23,12 +23,4 @@ export const feedbacks = [
     img: "/customer3.png",
     date: "Apr 20, 2020 at 23:07",
   },
-  {
-    id: 4,
-    name: "Roberto Carlos",
-    description:
-      "It's not the first time I've ordered art and I can say one thing: this person's work is done with a conscience. Thank you very much for the work done and I will continue to order only from you",
-    img: "/customer1.png",
-    date: "Apr 20, 2020 at 23:07",
-  },
 ];

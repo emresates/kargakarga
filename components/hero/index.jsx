@@ -35,26 +35,26 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute left-0 top-0 flex h-full w-full items-center justify-between p-40 opacity-0 transition-opacity duration-500 ${
+            className={`absolute left-0 top-0 flex h-full w-full items-center justify-between p-10 opacity-0 transition-opacity duration-1000 sm:p-20 xl:p-20 ${
               activeSlide === index && "opacity-100"
             }`}
           >
-            <div className="flex w-3/6 flex-col items-start gap-8">
-              <h1 className="text-6xl font-extrabold uppercase leading-[75px]">
+            <div className="flex w-full flex-col items-start gap-8 sm:w-3/6">
+              <h1 className="text-2xl font-extrabold uppercase leading-5 md:text-4xl md:leading-10 xl:text-5xl xl:leading-[75px]">
                 {slide.title}
               </h1>
               <h3 className="text-2xl font-bold">{slide.slogan}</h3>
-              <button className="rounded-2xl bg-[#294DFA] px-6 py-4 font-bold text-white">
+              <button className="rounded-2xl bg-[#294DFA] px-4 py-2 font-bold text-white sm:px-6 sm:py-4">
                 Join Us
               </button>
             </div>
             <div className="right">
-              <div className="relative mt-60 aspect-video w-[800px]">
+              <div className="relative hidden aspect-video w-96 sm:mt-40 sm:block md:w-[600px] xl:mt-60 xl:w-[800px]">
                 <Image src={slide.img} fill alt={slide.title} />
               </div>
             </div>
-            <div className="absolute right-10 top-52 -z-10">
-              <div className="relative aspect-square w-[600px]">
+            <div className="absolute right-10 top-52 -z-10 hidden sm:block">
+              <div className="relative aspect-square w-96 xl:w-[600px]">
                 <Image src="/ellipse.png" fill alt="ellipse" />
               </div>
             </div>
@@ -62,7 +62,7 @@ const Hero = () => {
         ))}
       </div>
       <div className="absolute bottom-10 w-full">
-        <div className="mb-10 flex items-center justify-start gap-2 pl-20">
+        <div className="mb-10 hidden items-center justify-start gap-2 pl-20 md:flex">
           <button
             onClick={() =>
               setActiveSlide((prevSlide) =>
@@ -84,7 +84,7 @@ const Hero = () => {
             <FiArrowRight className="text-xl font-thin" />
           </button>
         </div>
-        <div className="flex items-center justify-between gap-4 px-20">
+        <div className="flex items-end justify-between gap-4 px-4 text-sm sm:px-10 md:px-20 md:text-lg">
           <h1
             onClick={() => handleSlideClick(0)}
             className={`w-full cursor-pointer border-b-4 pb-4 transition-all ${

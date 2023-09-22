@@ -8,7 +8,7 @@ const Faq = () => {
   const [openIndex, setOpenIndex] = useState(-1);
 
   return (
-    <div className="relative mt-20 min-h-[800px] pt-20">
+    <div className="relative mt-20 min-h-[800px] h-full pt-0 md:pt-20">
       <div className="absolute -left-20 -top-10 -z-10">
         <div className="relative aspect-square w-[350px]">
           <Image src="/ellipse.png" fill alt="ellipse" />
