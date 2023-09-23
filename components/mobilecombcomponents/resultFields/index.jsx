@@ -1,6 +1,7 @@
 import React from "react";
 
-const ResultFields = () => {
+function ResultFields({ resultData }) {
+
   return (
     <div className="mt-20">
       <div className="relative flex items-start">
@@ -15,7 +16,7 @@ const ResultFields = () => {
           type="text"
           className="-ml-2 h-12 w-2/5 rounded-br-full rounded-tr-full border border-[#0D1840] bg-transparent pb-2 pl-4 outline-none"
           disabled
-          value="asdasdasd"
+          value={resultData.co2}
         />
       </div>
       <div className="relative mt-8 flex items-start">
@@ -30,7 +31,7 @@ const ResultFields = () => {
           type="text"
           className="-ml-2 h-12 w-2/5 rounded-br-full rounded-tr-full border border-[#0D1840] bg-transparent pb-2 pl-4 outline-none"
           disabled
-          value="asdasdasd"
+          value={resultData.ch4}
         />
       </div>
       <div className="relative mt-8 flex items-start">
@@ -45,7 +46,7 @@ const ResultFields = () => {
           type="text"
           className="-ml-2 h-12 w-2/5 rounded-br-full rounded-tr-full border border-[#0D1840] bg-transparent pb-2 pl-4 outline-none"
           disabled
-          value="asdasdasd"
+          value={resultData.n2o}
         />
       </div>
       <div className="relative mt-8 flex items-start">
@@ -63,11 +64,11 @@ const ResultFields = () => {
           type="text"
           className="-ml-2 h-12 w-2/5 rounded-br-full rounded-tr-full border border-[#0D1840] bg-transparent pb-2 pl-4 outline-none"
           disabled
-          value="asdasdasd"
+          value={resultData.co2e}
         />
       </div>
     </div>
   );
-};
+}
 
 export default ResultFields;
