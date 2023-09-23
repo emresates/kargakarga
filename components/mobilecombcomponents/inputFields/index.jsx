@@ -19,39 +19,26 @@ const InputFields = ({
     }));
   };
 
-  //* Fuel Types Bulma
-  // formData.source ile eşleşen yakıt türünü bulma
-  const selectedFuelSource = sources.find(
-    (source) => source.name_tr === formData.source,
-  );
-  // Eşleşen source un id'sini alma
-  const selectedSourceId = selectedFuelSource ? selectedFuelSource.id : null;
-  // selectedSourceId kullanarak eşleşen yakıt türlerini filtrele
+  // //* Fuel Types Bulma
   const filteredFuelTypes = fuel_types.filter(
-    (fuelType) => fuelType.source_type_id === selectedSourceId,
+    (fuelType) =>
+      fuelType.source_type_id ===
+      sources.find((source) => source.name_tr === formData.source)?.id,
   );
 
   //* Fuels Bulma
-  // formData.fuel_type ile eşleşen yakıt türünü bulma
-  const selectedFuelType = fuel_types.find(
-    (fuelType) => fuelType.name_tr === formData.fuel_type,
-  );
-  // Eşleşen yakıt türünün id'sini alma
-  const selectedFuelTypeId = selectedFuelType ? selectedFuelType.id : null;
-
-  // selectedFuelTypeId kullanarak eşleşen fuels filtreleme
   const filteredFuels = fuels.filter(
-    (fuel) => fuel.fuel_type_id === selectedFuelTypeId,
+    (fuel) =>
+      fuel.fuel_type_id ===
+      fuel_types.find((fuelType) => fuelType.name_tr === formData.fuel_type)
+        ?.id,
   );
 
   //* Units Bulma
-  // formData.fuel ile eşleşen units bulma
-  const selectedFuel = fuels.find((fuel) => fuel.name_tr === formData.fuel);
-  // Eşleşen fuel id'sini alma
-  const selectedFuelId = selectedFuel ? selectedFuel.id : null;
-
-  // selectedFuelId kullanarak eşleşen fuels filtreleme
-  const filteredUnits = units.filter((unit) => unit.fuel_id === selectedFuelId);
+  const filteredUnits = units.filter(
+    (unit) =>
+      unit.fuel_id === fuels.find((fuel) => fuel.name_tr === formData.fuel)?.id,
+  );
 
   return (
     <div className="mt-16">
@@ -170,7 +157,7 @@ const InputFields = ({
               onChange={handleChange}
             />
           </div>
-          <div className="ml-8 flex w-2/5 flex-col">
+          <div className="ml-8 flex w-2/5 flex-col relative">
             <label htmlFor="" className="text-sm">
               Units
             </label>

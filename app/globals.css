@@ -8,6 +8,9 @@
   width: 80%;
   padding-bottom: 8px;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #selector2 {

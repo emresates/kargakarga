@@ -40,36 +40,31 @@ const InputPage = ({ facilities, sources, fuel_types, fuels, units }) => {
     });
   };
 
-  //* Fuel Types Bulma
-  // formData.source ile eşleşen yakıt türünü bulma
-  const selectedFuelSource = sources.find(
+  //* Selected Source ID
+  const selectedSourceId = sources.find(
     (source) => source.name_tr === formData.source,
-  );
-  // Eşleşen source un id'sini alma
-  const selectedSourceId = selectedFuelSource ? selectedFuelSource.id : null;
+  )?.id;
 
-  //* Fuels Bulma
-  // formData.fuel_type ile eşleşen yakıt türünü bulma
-  const selectedFuelType = fuel_types.find(
+  //* Selected Fuel Type ID
+
+  const selectedFuelTypeId = fuel_types.find(
     (fuelType) => fuelType.name_tr === formData.fuel_type,
-  );
-  // Eşleşen yakıt türünün id'sini alma
-  const selectedFuelTypeId = selectedFuelType ? selectedFuelType.id : null;
+  )?.id;
 
-  //* Units Bulma
-  // formData.fuel ile eşleşen units bulma
-  const selectedFuel = fuels.find((fuel) => fuel.name_tr === formData.fuel);
-  // Eşleşen fuel id'sini alma
-  const selectedFuelId = selectedFuel ? selectedFuel.id : null;
+  //* Selected Fuel ID
+  const selectedFuelId = fuels.find(
+    (fuel) => fuel.name_tr === formData.fuel,
+  )?.id;
 
-  // formData.fuel ile eşleşen units bulma
-  const selectedUnit = units.find((unit) => unit.name_tr === formData.unit);
-  // Eşleşen fuel id'sini alma
-  const selectedUnitId = selectedUnit ? selectedUnit.id : null;
+  //* Selected Unit ID
+  const selectedUnitId = units.find(
+    (unit) => unit.name_tr === formData.unit,
+  )?.id;
 
-  let amount = formData.amount;
-  let facility = formData.facility.toLowerCase().replace(/\s/g, "");
-  let year = formData.year;
+  let amount = formData?.amount;
+  let facility = formData?.facility?.replace(/\s/g, "").toLowerCase();
+  let year = formData?.year;
+
 
   useEffect(() => {
     if (
@@ -118,7 +113,7 @@ const InputPage = ({ facilities, sources, fuel_types, fuels, units }) => {
       n2o: "",
       co2e: "",
     });
-  }, [selectedFuelSource]);
+  }, [formData.source]);
 
   // Kaydet butonu işlevsellik
   const handleSave = () => {
@@ -143,10 +138,12 @@ const InputPage = ({ facilities, sources, fuel_types, fuels, units }) => {
     handleReset();
   };
 
+  console.log(formData);
+
   return (
     <div className="relative mx-2 mt-2 h-full rounded-lg bg-white p-20">
       <div className="flex">
-        <span className="absolute left-[45%] top-1/2 h-96 w-[1px] -translate-x-1/2 -translate-y-1/2 bg-gray-300"></span>
+        <span className="absolute left-[45%] top-1/3 h-96 w-[1px] -translate-x-1/2 -translate-y-1/2 bg-gray-300"></span>
         <div className="flex-1">
           <h1 className="w-[calc(100%-500px)] border-b-2 border-gray-200 pb-3 text-xl font-semibold uppercase">
             Girdi alanı
