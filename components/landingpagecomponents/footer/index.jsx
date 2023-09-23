@@ -62,8 +62,8 @@ const Footer = () => {
             </button>
           </form>
         </div>
-        <div className="xl:block hidden relative h-[650px] w-[850px]">
-          <Image src="/group.png" fill alt="group" sizes="500px" />
+        <div className="xl:block hidden relative h-[650px] w-full">
+          <Image src="/group.png" fill alt="group" sizes="500px" className="object-contain" />
         </div>
       </div>
 

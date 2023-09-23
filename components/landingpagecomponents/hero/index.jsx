@@ -1,18 +1,20 @@
 "use client";
-import { slides } from "@/data/hero";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { slides } from "@/data/hero";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  let interval;
 
+  // Interval functions
+  let interval;
   const handleSlideClick = (index) => {
     clearInterval(interval);
     setActiveSlide(index);
   };
 
+  // Auto Slide
   const startInterval = () => {
     interval = setInterval(() => {
       setActiveSlide((prevSlide) =>

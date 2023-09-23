@@ -14,9 +14,11 @@ function getCookieValue(cookieName) {
 }
 
 export default function CookiePolicy() {
+  // States
   const [acceptedCookies, setAcceptedCookies] = useState(false);
   const [initialLoad, setInitialLoad] = useState(false);
 
+  // Cookie'yi kabul etmek için
   const handleAcceptCookies = () => {
     const cookieName1 = "kullaniciAdi";
     const cookieValue1 = "JohnDoe";
@@ -33,10 +35,12 @@ export default function CookiePolicy() {
     setAcceptedCookies(true);
   };
 
+  // Cookie'yi reddetmek için
   const handleRejectCookies = () => {
     setAcceptedCookies(false);
   };
 
+  // Eğer cookie ler daha önce kabul edildiyse bir daha çıkmaması için
   useEffect(() => {
     const x = getCookieValue("kullaniciAdi");
     const y = getCookieValue("tercihler");
@@ -64,13 +68,13 @@ export default function CookiePolicy() {
       <div className="flex flex-1 items-center justify-end gap-3">
         <button
           onClick={handleRejectCookies}
-          className="rounded-2xl bg-[#4A4A4A] px-8 py-5 font-semibold"
+          className="rounded-2xl bg-[#4A4A4A] px-6 py-3 font-semibold"
         >
           Deny
         </button>
         <button
           onClick={handleAcceptCookies}
-          className="rounded-2xl bg-white px-8 py-5 font-semibold text-black"
+          className="rounded-2xl bg-white px-6 py-3 font-semibold text-black"
         >
           Accept
         </button>
