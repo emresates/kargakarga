@@ -8,13 +8,16 @@ import {
 import { LuLayoutDashboard } from "react-icons/lu";
 import { BsFillPersonFill, BsPersonGear } from "react-icons/bs";
 import { RiLockPasswordLine, RiSettings4Line } from "react-icons/ri";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="h-[850px] w-[13%] bg-white">
       <div className="flex h-64 w-full flex-col items-center justify-center bg-blue-950 text-white">
         <div className="relative mb-2 aspect-square w-28">
-          <Image src="/profile.png" fill alt="person" sizes="300px" />
+          <Link href="/">
+            <Image src="/profile.png" fill alt="person" sizes="300px" />
+          </Link>
         </div>
         <h2>Murat Turan</h2>
         <span className="font-thin">Tedarik Zinciri Yöneticisi</span>
