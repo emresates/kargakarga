@@ -65,7 +65,6 @@ const InputPage = ({ facilities, sources, fuel_types, fuels, units }) => {
   let facility = formData?.facility?.replace(/\s/g, "").toLowerCase();
   let year = formData?.year;
 
-
   useEffect(() => {
     if (
       !selectedSourceId ||
@@ -79,6 +78,9 @@ const InputPage = ({ facilities, sources, fuel_types, fuels, units }) => {
       return;
     fetch(
       `http://3.86.79.133/dijital-mentorluk-backend-test/public/test-data-calculate?source_id=${selectedSourceId}&fuel_type_id=${selectedFuelTypeId}&fuel_id=${selectedFuelId}&unit_id=${selectedUnitId}&amount=${amount}&facility=${facility}&year=${year}}`,
+      {
+        cache: "no-store",
+      },
     )
       .then((res) => res.json())
       .then((data) => {
