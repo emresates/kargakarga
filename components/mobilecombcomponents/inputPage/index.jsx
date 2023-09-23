@@ -140,8 +140,6 @@ const InputPage = ({ facilities, sources, fuel_types, fuels, units }) => {
     handleReset();
   };
 
-  console.log(formData);
-
   return (
     <div className="relative mx-2 mt-2 h-full rounded-lg bg-white p-20">
       <div className="flex">
